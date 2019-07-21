@@ -17,9 +17,11 @@
         methods:{
             addNum(){
                 this.count++
+                this.$emit('func',1)
             },
             minus(){
                 this.count--
+                this.$emit('func',-1)
             }
         }
 

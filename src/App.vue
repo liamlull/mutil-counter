@@ -1,7 +1,6 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <span>{{ times }}</span><input v-model="times">
+    <input v-model="times">
     <counter-group :title="parseInt(times==''?0:times)"/>
   </div>
 </template>

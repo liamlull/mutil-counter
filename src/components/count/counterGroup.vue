@@ -1,7 +1,7 @@
 <template>
     <div>
         <counter v-for=" n in title" @func="getCount"/>
-        <span>总计：{{sum}}</span>
+        <span>总计：{{countSum}}</span>
     </div>
 </template>
 
@@ -15,13 +15,13 @@
         props:[
             'title'
         ],
-        data() {
-            return {
-                sum:0
+        computed:{
+            countSum(){
+                return this.$store.state.countSum;
             }
         },methods:{
             getCount(count){
-                this.sum+=count;
+                this.$store.commit('addNum',count);
             }
         }
     }
